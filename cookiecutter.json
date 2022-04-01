@@ -1,0 +1,19 @@
+{
+  "author_firstname": "Philip",
+  "author_surname": "Darke",
+  "author_email": "hello@philipdarke.com",
+  "orchid": "https://orcid.org/0000-0002-9033-2767",
+  "github_username": "philipdarke",
+  "website": "philipdarke.com",
+  
+  "package_name": "",
+  "package_short_description": "",
+  "package_version": "0.1.0",
+  "doi": "10.5281/zenodo.xxxxxxx",
+  "day": "01",
+  "month": "01",
+  "year": "2022",
+  "license": "MIT",
+  
+  "python_version": ">=3.8,<3.10"
+}
