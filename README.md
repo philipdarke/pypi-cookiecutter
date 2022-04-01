@@ -6,7 +6,7 @@ Based on [Python Packages](https://py-pkgs.org/). Developed for my use so may ne
 
 ## Project structure
 
-Creates a Python (version ">=3.8,<3.10") project under the MIT license with the following structure.
+Creates a Python ``>=3.8,<3.10`` project under the MIT license with the following structure.
 
 ```
 package-name
@@ -51,7 +51,14 @@ Uses Github Actions for continuous integration. The workflow:
 3. Builds the package documentation using `sphinx`.
 4. Generates a code coverage badge using [`genbadge`](https://github.com/smarie/python-genbadge/).
 5. Pushes the documentation to GitHub pages using the [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) action.
-6. Creates a release if a tag is pushed.
+6. Creates a release if a tag is pushed using the [git-release](https://github.com/marketplace/actions/git-release) action.
+
+## Resources
+
+The following are good resources for Python package development:
+
+* [Python Packages](https://py-pkgs.org/)
+* [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 
 ## License
 
