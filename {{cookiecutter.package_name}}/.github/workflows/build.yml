@@ -22,7 +22,6 @@ jobs:
       - name: Install package and dependencies
         run: |
           python3 -m poetry install
-          python3 -m poetry run pip3 uninstall flake8-html -y
       - name: Lint code
         run: |
           python3 -m poetry run black . --check
