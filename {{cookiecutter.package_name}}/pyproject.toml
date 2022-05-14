@@ -5,9 +5,9 @@ description = "{{ cookiecutter.package_short_description }}"
 authors = ["{{ cookiecutter.author_firstname }} {{ cookiecutter.author_surname }} <{{ cookiecutter.author_email }}>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://{{ cookiecutter.github_username }}.com/{{ cookiecutter.package_name }}"
+homepage = "https://{{ cookiecutter.website }}/{{ cookiecutter.package_name }}"
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}"
-documentation = "https://{{ cookiecutter.github_username }}.com/{{ cookiecutter.package_name }}"
+documentation = "https://{{ cookiecutter.website }}/{{ cookiecutter.package_name }}"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.10"
@@ -37,4 +37,3 @@ py_version = 38
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-

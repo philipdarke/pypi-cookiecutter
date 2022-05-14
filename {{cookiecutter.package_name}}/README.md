@@ -4,7 +4,7 @@
 [![Build status](https://img.shields.io/github/workflow/status/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}/build.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}/actions/workflows/build.yml)
 [!Coverage](https://{{ cookiecutter.website }}/{{ cookiecutter.package_name }}/assets/coverage-badge.svg)
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}/blob/main/LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/{{ cookiecutter.doi }}}.svg)](https://doi.org/{{ cookiecutter.doi }}})
+[![DOI](https://zenodo.org/badge/DOI/{{ cookiecutter.doi }}}.svg)](https://doi.org/{{ cookiecutter.doi }})
 
 ## Installation
 

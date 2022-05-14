@@ -14,11 +14,15 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx_autodoc_typehints",
     "sphinx.ext.viewcode",
+    "sphinx.ext.doctest",
 ]
 exclude_patterns = ["_build"]
 
 # HTML output
 html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+    "navigation_depth": 1,
+}
 html_context = {
     "display_github": True,
     "github_user": "{{ cookiecutter.github_username }}",

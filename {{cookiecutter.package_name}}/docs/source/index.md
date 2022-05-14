@@ -5,5 +5,6 @@
 .. toctree::
    :hidden:
 
-   api
+   tutorials/index
+   api/index
 ```
