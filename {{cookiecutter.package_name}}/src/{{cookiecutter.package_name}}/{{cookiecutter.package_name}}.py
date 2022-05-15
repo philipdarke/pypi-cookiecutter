@@ -1,6 +1,3 @@
-# Based on https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html
-
-
 def a_function(param1: int, param2: str) -> bool:
     """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

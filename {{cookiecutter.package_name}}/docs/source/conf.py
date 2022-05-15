@@ -21,7 +21,7 @@ exclude_patterns = ["_build"]
 # HTML output
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-    "navigation_depth": 1,
+    "navigation_depth": 2,
 }
 html_context = {
     "display_github": True,

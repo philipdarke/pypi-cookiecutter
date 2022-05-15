@@ -2,7 +2,7 @@ import {{ cookiecutter.package_name }}
 
 
 class TestExamples:
-    def test_function(self):
+    def test_a_function(self):
         assert {{ cookiecutter.package_name }}.a_function(1, 2)
 
     def test_class(self):
