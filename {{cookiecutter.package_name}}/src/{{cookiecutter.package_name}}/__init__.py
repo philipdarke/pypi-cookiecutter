@@ -1,4 +1,4 @@
-"""Add an introduction to the ``{{ cookiecutter.package_name }}`` module here.
+"""Add an introduction to the ``{{ cookiecutter.package_name }}`` module in ``__init__.py``.
 """
 
 

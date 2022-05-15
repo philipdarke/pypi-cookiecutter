@@ -16,6 +16,9 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.doctest",
 ]
+
+# sphinx.ext.autodoc settings
+autodoc_member_order = "bysource"
 exclude_patterns = ["_build"]
 
 # HTML output

@@ -1,9 +1,9 @@
-"""Add an introduction to the ``{{ cookiecutter.package_name }}.utils`` module here.
+"""Add an introduction to each module in ``[module_name].py``.
 """
 
 
 def example_function(a: float, b: float, eps: float = 1e-8) -> bool:
-    """Example function that determines whether two input numbers ``a`` and ``b`` are
+    r"""Example function that determines whether two input numbers ``a`` and ``b`` are
     equal i.e. whether
 
     .. math:: a = b
