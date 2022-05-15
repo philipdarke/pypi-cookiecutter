@@ -2,45 +2,54 @@
 
 [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) template for Python packages using [`poetry`](https://python-poetry.org/) for build and dependency management, [`pytest`](https://github.com/pytest-dev/pytest) for unit testing and [`sphinx`](https://www.sphinx-doc.org) for documentation.
 
-Based on [Python Packages](https://py-pkgs.org/). Developed for my use so may need tweaking e.g. the links in README.md.
+Based on [Python Packages](https://py-pkgs.org/). Developed for my use so may need tweaking.
 
 ## Project structure
 
-Creates a Python ``>=3.8,<3.10`` project under the MIT license with the following structure.
+Creates a Python project with the following structure where `[package-name]` is the name of the package when uploaded to PyPi.
 
 ```
-package-name
-├── .github                    ┐
-│   └── workflows              │ CI workflow
-│       └── build.yml          ┘
-├── .flake8                    ┐
-├── .gitignore                 | Configuration
-├── .pre-commit-config.yaml    ┘
-├── docs                       ┐
-│   ├── make.bat               │
-│   ├── Makefile               |
-│   ├── source                 |
-│       ├── README.md          |
-│       ├── conf.py            | Documentation
-│       ├── index.md           |
-│       ├── api.md             |
-├── LICENSE                    │
-├── README.md                  |
-├── CITATION.cff               |
-├── CHANGELOG.md               ┘
-├── pyproject.toml             ┐ 
-├── src                        │
-│   └── package-name           │ Package code and build
-│       ├── __init__.py        │
-│       └── package-name.py    ┘
-└── tests                      ┐
-│   ├── __init__.py            | Unit tests
-|   └── test_package-name.py   ┘
+[package-name]
+├── .github                         ┐
+│   └── workflows                   │ CI workflow
+│       └── build.yml               ┘
+├── .flake8                         ┐
+├── .gitignore                      | Tool configuration
+├── .pre-commit-config.yaml         ┘
+├── docs                            ┐
+│   ├── make.bat                    │
+│   ├── Makefile                    |
+│   └── source                      |
+│       ├── api                     |
+│       │   ├── [package-name].md   |
+│       │   ├── index.md            |
+│       │   └── utils.md            |
+│       ├── tutorials               | Documentation
+│       │   └── getting_started.md  |
+│       ├── conf.py                 |
+│       ├── index.md                |
+│       └── README.md               |
+├── CHANGELOG.md                    │
+├── CITATION.cff                    |
+├── LICENSE                         |
+├── README.md                       ┘
+├── pyproject.toml                  ┐ 
+├── src                             │
+│   └── [package-name]              │ Package code and
+│       ├── __init__.py             │ build configuration
+│       ├── [package-name].py       │
+│       └── utils.py                ┘
+└── tests                           ┐
+    ├── test_[package-name].py      | Unit tests
+    └── test_utils.py               ┘
+        
 ```
+
+All objects in `[package-name].py` are made available as `[package-name].object-name` (see `__init__.py`). `utils.py` is an example utility function module.
 
 ## Pre-commits
 
-[`black`](https://github.com/psf/black), [`isort`](https://github.com/PyCQA/isort) and [`flake8`](https://github.com/PyCQA/flake8) are run as pre-commits. Run `pre-commit install` to set these up.
+[`black`](https://github.com/psf/black), [`isort`](https://github.com/PyCQA/isort) and [`flake8`](https://github.com/PyCQA/flake8) are run as pre-commit hooks. Run `pre-commit install` to set these up.
 
 ## Continuous integration
 
