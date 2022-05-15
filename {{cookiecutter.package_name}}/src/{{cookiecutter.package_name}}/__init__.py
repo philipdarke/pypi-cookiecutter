@@ -1,4 +1,4 @@
-"""Module docstring for ``cdtcloud`` module.
+"""Add an introduction to the ``{{ cookiecutter.package_name }}`` module here.
 """
 
 
@@ -10,5 +10,5 @@ from {{ cookiecutter.package_name }}.{{ cookiecutter.package_name }} import *  #
 
 __all__ = []
 for module in dir():
-    if not module.startswith("__") and module != "cdtcloud":
+    if not module.startswith("__") and module != "{{ cookiecutter.package_name }}":
         __all__.append(module)

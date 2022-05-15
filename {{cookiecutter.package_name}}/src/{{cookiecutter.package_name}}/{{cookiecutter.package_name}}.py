@@ -1,63 +1,39 @@
-def a_function(param1: int, param2: str) -> bool:
-    """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+class ExampleClass:
+    """Example class.
 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Sed nulla augue, sagittis vel consequat non, posuere sit amet nibh. Aenean et tempor
+    metus. Proin dignissim aliquam scelerisque. Proin sit amet eleifend sem. Vivamus
+    sodales, justo a lacinia accumsan, augue orci gravida metus, lobortis posuere massa
+    dolor in nisi. Maecenas dictum odio eget leo tincidunt, et tempor felis
+    sollicitudin.
 
-    Args:
-        param1: Description of the first parameter.
-        param2: Description of the second parameter.
+    .. warning::
+        Quisque bibendum justo auctor enim accumsan, eget sodales arcu gravida.
 
-    Returns:
-        bool: True if successful, False otherwise.
-
-    """
-    return True
-
-
-class AClass:
-    """Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Parameters:
+        x: First input.
+        y: Second input.
+        z: Third input.
 
     Attributes:
-        attr1 (str): Description of the first attribute.
-        attr2 (int): Description of the second attribute.
-
+        tokens: List of all class parameters.
     """
 
-    def __init__(self, param1: str, param2: int, param3: list):
-        """Docstring on the __init__ method.
+    def __init__(self, x: str, y: int, z: float) -> None:
+        self.x = x
+        self.y = y
+        self.z = z
 
-        The __init__ method may be documented in either the class level
-        docstring, or as a docstring on the __init__ method itself. Either form is
-        acceptable, but the two should not be mixed. Choose one convention to document
-        the __init__ method and be consistent with it.
+        self.tokens = [x, y, z]
 
-        Args:
-            param1: Description of the first parameter.
-            param2: Description of the second parameter.
-            param3: Description of the third parameter.
+    def example_method(self, input: float) -> bool:
+        """Example method.
 
-        """
-        self.attr1 = param1
-        self.attr2 = param2
-        self.param3 = param3
-
-    def a_method(self, param1: float, param2: int) -> bool:
-        """Docstring on a class method.
-
-        Args:
-            param1: Description of the first parameter.
-            param2: Description of the second parameter.
+        Parameters:
+            input: Numeric input for testing.
 
         Returns:
-            bool: True if successful, False otherwise.
+            bool: True if ``input`` matches a class parameter, otherwise False.
 
         """
-        return True
+        return input in self.tokens

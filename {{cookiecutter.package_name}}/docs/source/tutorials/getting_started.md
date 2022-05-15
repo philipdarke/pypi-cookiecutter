@@ -1,3 +1,3 @@
 # Getting started
 
-TODO
+Placeholder for a helpful *getting started* tutorial.

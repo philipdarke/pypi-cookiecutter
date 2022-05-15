@@ -1,10 +1,14 @@
-import {{ cookiecutter.package_name }}
+from {{ cookiecutter.package_name }} import ExampleClass
 
 
-class TestExamples:
-    def test_a_function(self):
-        assert {{ cookiecutter.package_name }}.a_function(1, 2)
+class TestExampleClass:
+    def test_instance(self):
+        test = ExampleClass("1", 2, 3.0)
+        assert test.tokens == ["1", 2, 3.0]
 
-    def test_class(self):
-        a_class = {{ cookiecutter.package_name }}.AClass(1, 2, 3)
-        assert a_class.a_method(3, 4)
+    def test_example_method(self):
+        test = ExampleClass("4", 5, 6.0)
+        assert test.example_method("4")
+        assert test.example_method(5)
+        assert test.example_method(6.0)
+        assert not test.example_method(7)
