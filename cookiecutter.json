@@ -8,12 +8,10 @@
   
   "package_name": "",
   "package_short_description": "",
-  "package_version": "0.1.0",
+  "package_version": "0.0.1",
   "doi": "10.5281/zenodo.xxxxxxx",
   "day": "01",
   "month": "01",
   "year": "2022",
-  "license": "MIT",
-  
-  "python_version": ">=3.8,<3.10"
+  "license": "MIT"
 }
