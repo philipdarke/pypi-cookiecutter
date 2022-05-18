@@ -21,8 +21,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 If you use this software, please cite it as below:
 
 ```
-@software{ {{ cookiecutter.doi }},
-    author = { Darke, Philip },
+@software{ {{ cookiecutter.author_surname }}_{{ cookiecutter.package_name }}_{{ cookiecutter.year }},
+    author = { {{ cookiecutter.author_surname }}, {{ cookiecutter.author_firstname }} },
     title = "{ {{ cookiecutter.package_name }}: {{ cookiecutter.package_short_description }} }",
     version = { {{ cookiecutter.package_version }} },
     month = { {{ cookiecutter.month }} },
