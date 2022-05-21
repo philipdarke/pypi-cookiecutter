@@ -16,5 +16,14 @@ def example_function(a: float, b: float, eps: float = 1e-8) -> bool:
     Returns:
         True if inputs are equal, else False.
 
+    Example:
+        .. testsetup::
+
+            from {{ cookiecutter.package_name }}.utils import example_function
+
+        .. doctest::
+
+            >>> example_function(1, 2)
+            False
     """
     return abs(a - b) < eps

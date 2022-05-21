@@ -17,6 +17,19 @@ class ExampleClass:
 
     Attributes:
         tokens: List of all class parameters.
+    
+    Example:
+        .. testsetup::
+
+            from {{ cookiecutter.package_name }} import ExampleClass
+
+        .. doctest::
+
+            >>> x = ExampleClass(1, 2, 3)
+            >>> x.example_method(3)
+            True
+            >>> x.example_method(4)
+            False
     """
 
     def __init__(self, x: str, y: int, z: float) -> None:
