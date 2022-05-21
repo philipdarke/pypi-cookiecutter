@@ -1,8 +1,8 @@
 # pypi-cookiecutter
 
-[`cookiecutter`](https://github.com/cookiecutter/cookiecutter) template for Python packages using [`poetry`](https://python-poetry.org/) for build and dependency management, [`pytest`](https://github.com/pytest-dev/pytest) for unit testing and [`sphinx`](https://www.sphinx-doc.org) for documentation.
+**A [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) template for a [PyPI](https://pypi.org/)-ready Python package**
 
-Based on [Python Packages](https://py-pkgs.org/). Developed for my use so may need tweaking.
+The package uses [`Poetry`](https://python-poetry.org/) for build and dependency management, [`pytest`](https://github.com/pytest-dev/pytest) for unit testing and [`sphinx`](https://www.sphinx-doc.org) for documentation. The template is based on [Python Packages](https://py-pkgs.org/) and was developed for my use so may need tweaking.
 
 ## Project structure
 
@@ -42,25 +42,36 @@ Creates a Python project with the following structure where `[package-name]` is 
 └── tests                           ┐
     ├── test_[package-name].py      | Unit tests
     └── test_utils.py               ┘
-        
 ```
 
-All objects in `[package-name].py` are made available as `[package-name].object-name` (see `__init__.py`). `utils.py` is an example utility function module.
+All objects in `src/[package-name]/[package-name].py` are made available as `[package-name].[object]` (see `__init__.py`). `utils.py` is an example utility function module.
 
 ## Pre-commits
 
 [`black`](https://github.com/psf/black), [`isort`](https://github.com/PyCQA/isort) and [`flake8`](https://github.com/PyCQA/flake8) are run as pre-commit hooks. Run `pre-commit install` to set these up.
 
-## Continuous integration
+## Continuous integration and deployment
 
-Uses Github Actions for continuous integration. The workflow:
+Uses Github Actions for continuous integration and deployment. The workflow:
 
 1. Checks code formatting with `black`, `isort` and `flake8`.
 2. Runs `pytest` and generates a code coverage `.xml` file using [`pytest-cov`](https://github.com/pytest-dev/pytest-cov).
 3. Builds the package documentation using `sphinx`.
 4. Generates a code coverage badge using [`genbadge`](https://github.com/smarie/python-genbadge/).
-5. Pushes the documentation to GitHub pages using the [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) action.
+5. Pushes the documentation to GitHub Pages using the [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) action.
 6. Creates a release if a tag is pushed using the [git-release](https://github.com/marketplace/actions/git-release) action.
+
+You may need to update the default permissions for GitHub Actions to "Read and write permissions" under Repository -> Settings -> Actions -> General -> Workflow permissions.
+
+## Publishing to PyPI
+
+Create accounts at [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org/).
+
+To test the package, run `poetry build` and `poetry publish -r test-pypi` to publish the package to TestPyPi. You may need to first run `poetry config repositories.test-pypi https://test.pypi.org/legacy/` to add the TestPyPI repository.
+
+Check the package can be installed with `pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple [package-name]`. The `--extra-index-url` argument is needed to install dependencies from PyPI.
+
+Once the package has been tested, run `poetry publish` to publish to PyPI.
 
 ## Generating a DOI
 
@@ -80,3 +91,5 @@ The following are good resources for Python package development:
 ## License
 
 Released under the MIT license.
+
+The template project also uses the MIT License. This can be changed by entering a different license when initialising a project *and* updating the LICENSE file accordingly.
