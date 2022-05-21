@@ -24,13 +24,14 @@ If you use this software, please cite it as below:
 @software{ {{ cookiecutter.author_surname }}_{{ cookiecutter.package_name }}_{{ cookiecutter.year }},
     author = { {{ cookiecutter.author_surname }}, {{ cookiecutter.author_firstname }} },
     title = "{ {{ cookiecutter.package_name }}: {{ cookiecutter.package_short_description }} }",
-    version = { {{ cookiecutter.package_version }} },
     month = { {{ cookiecutter.month }} },
     year = { {{ cookiecutter.year }} },
     doi = { {{ cookiecutter.doi }} },
     url = { https://doi.org/{{ cookiecutter.doi }} },
 }
 ```
+
+The DOI above points to the latest version of the package. To reference a particular release, look up the DOI [here](https://doi.org/{{ cookiecutter.doi }}). You may also want to add `version = x.y.z` to the reference.
 
 ## License
 

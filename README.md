@@ -62,6 +62,14 @@ Uses Github Actions for continuous integration. The workflow:
 5. Pushes the documentation to GitHub pages using the [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) action.
 6. Creates a release if a tag is pushed using the [git-release](https://github.com/marketplace/actions/git-release) action.
 
+## Generating a DOI
+
+Create an account at [Zenodo](https://zenodo.org/) and link your GitHub account. Enable the package repository in Account -> GitHub and a DOI will be generated following each release.
+
+Once a DOI is available, README.md and CITATION.cff should be updated accordingly.
+
+This approach is not ideal as the DOI is assigned after creating a release. This can be managed in part by using the Concept DOI which always points to the most recent version of the package. See the Zenodo [FAQ](https://help.zenodo.org/#versioning) for more information.
+
 ## Resources
 
 The following are good resources for Python package development:

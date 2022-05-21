@@ -5,7 +5,6 @@ authors:
   given-names: "{{ cookiecutter.author_firstname }}"
   orcid: "https://orcid.org/{{ cookiecutter.orcid }}"
 title: "{{ cookiecutter.package_name }}: {{ cookiecutter.package_short_description }}"
-version: {{ cookiecutter.package_version }}
 doi: {{ cookiecutter.doi }}
 date-released: {{ cookiecutter.year }}-{{ cookiecutter.month }}-{{ cookiecutter.day }}
 url: "https://doi.org/{{ cookiecutter.doi }}"
