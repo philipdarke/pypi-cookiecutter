@@ -15,5 +15,5 @@
   "year": "2022",
   "license": "MIT",
 
-  "python-version": ">=3.8,<3.10"
+  "python_version": ">=3.8,<3.10"
 }

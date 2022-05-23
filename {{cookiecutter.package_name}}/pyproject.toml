@@ -10,7 +10,7 @@ repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecut
 documentation = "https://{{ cookiecutter.website }}/{{ cookiecutter.package_name }}"
 
 [tool.poetry.dependencies]
-python = "{{ cookiecutter.python-version }}"
+python = "{{ cookiecutter.python_version }}"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
