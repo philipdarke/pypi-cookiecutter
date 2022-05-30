@@ -1,4 +1,4 @@
-# pypi-cookiecutter: a template Python package
+# pypi-cookiecutter
 
 A [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) template for a [PyPI](https://pypi.org/)-ready Python package.
 
@@ -45,7 +45,7 @@ Creates a Python project with the following structure:
 
 Add your code to the `src/[package-name]/` directory. All objects in `[package-name].py` are imported as `[package-name].[object]` and `utils.py` is an example utility function module.
 
-The project uses Python 3.8. This can be changed by entering a different version when initialising the project *and* by updating the `black` and `isort` sections of `pyproject.toml`.
+The project uses Python 3.8. This can be changed by entering a different version when initialising the project *and* by updating the `black` and `isort` sections of `pyproject.toml` plus the CI matrix and CD environment variable in `.github/workflows/build.yml`.
 
 ## Pre-commits
 
@@ -59,8 +59,12 @@ Uses Github Actions for continuous integration and deployment. The workflow:
 2. Runs `pytest` and generates a code coverage `.xml` file using [`pytest-cov`](https://github.com/pytest-dev/pytest-cov).
 3. Builds the package documentation using `sphinx` and checks any code examples with `doctest`.
 4. Generates a code coverage badge using [`genbadge`](https://github.com/smarie/python-genbadge/).
-5. Pushes the documentation to GitHub Pages using the [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) action.
-6. Creates a release if a tag is pushed using the [git-release](https://github.com/marketplace/actions/git-release) action.
+
+If a new version has been tagged:
+
+5. Pushes the documentation to GitHub Pages using the [peaceiris/actions-gh-pages@v3.7.3](https://github.com/peaceiris/actions-gh-pages) action.
+6. Creates a release if a tag is pushed using the [git-release](https://github.com/marketplace/actions/git-release) action. This generates a new DOI if the repository has been linked to your Zenodo account.
+7. Publishes the package to PyPI using the [pypa/gh-action-pypi-publish@v1.5.0](https://github.com/pypa/gh-action-pypi-publish) action.
 
 You may need to update the default permissions for GitHub Actions to "Read and write permissions" under Repository -> Settings -> Actions -> General -> Workflow permissions.
 
@@ -75,13 +79,15 @@ You may need to update the default permissions for GitHub Actions to "Read and w
 
 ## Publishing to PyPI
 
-Create accounts at [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org/).
+Create account at [PyPI](https://pypi.org/), generate an API token and add this to the GitHub repository as `PYPI_API_TOKEN`. The GitHub Actions workflow will publish the package when a new release is tagged.
 
-To test the package, run `poetry build` and `poetry publish -r test-pypi` to publish the package to TestPyPi. You may need to first run `poetry config repositories.test-pypi https://test.pypi.org/legacy/` to add the TestPyPI repository.
+For the first release, manually publish a package using `Poetry`:
 
-Check the package can be installed with `pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple [package-name]`. The `--extra-index-url` argument is needed to install dependencies from PyPI.
+* To test the package, run `poetry build` and `poetry publish -r test-pypi` to publish the package to TestPyPi. You may need to first run `poetry config repositories.test-pypi https://test.pypi.org/legacy/` to add the TestPyPI repository.
 
-Once the package has been tested, run `poetry publish` to publish to PyPI.
+* Check the package can be installed with `pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple [package-name]`. The `--extra-index-url` argument is needed to install dependencies from PyPI.
+
+* Once the package has been tested, run `poetry publish` to publish to PyPI.
 
 ## Generating a DOI
 
