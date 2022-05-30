@@ -17,7 +17,7 @@ class ExampleClass:
 
     Attributes:
         tokens: List of all class parameters.
-    
+
     Example:
         .. testsetup::
 

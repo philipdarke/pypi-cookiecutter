@@ -9,7 +9,7 @@ release = version
 
 # General
 extensions = [
-    "sphinx.ext.autodoc",  
+    "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
@@ -31,7 +31,7 @@ copybutton_image_svg = """
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
 </svg>
-"""
+"""  # noqa: E501
 
 # HTML output
 html_theme = "sphinx_rtd_theme"
