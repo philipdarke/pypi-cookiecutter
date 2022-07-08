@@ -49,7 +49,18 @@ The project uses Python 3.8. This can be changed by entering a different version
 
 ## Pre-commits
 
-[`black`](https://github.com/psf/black), [`isort`](https://github.com/PyCQA/isort) and [`flake8`](https://github.com/PyCQA/flake8) are run as pre-commit hooks. Run `pre-commit install` to set these up.
+The following are run as pre-commit hooks:
+
+* [`black`](https://github.com/psf/black) to lint code
+* [`isort`](https://github.com/PyCQA/isort) to sort imports
+* [`flake8`](https://github.com/PyCQA/flake8) to check PEP 8 compliance
+* [`trailing-newline`](https://github.com/philipdarke/trailing-newline) to ensure files end with a blank newline*
+* [`mixed-line-ending`](https://github.com/pre-commit/pre-commit-hooks) to use consistent CRLF or LF line endings
+* [`name-tests-test`](https://github.com/pre-commit/pre-commit-hooks) to ensure the filenames of test scripts start "test"
+
+Run `pre-commit install` to set these up.
+
+\* Update `args` in `.pre-commit-config.yaml` to ignore specific file extensions. See the [documentation](https://github.com/philipdarke/trailing-newline).
 
 ## Continuous integration and deployment
 
@@ -79,11 +90,11 @@ You may need to update the default permissions for GitHub Actions to "Read and w
 
 ## Publishing to PyPI
 
-Create account at [PyPI](https://pypi.org/), generate an API token and add this to the GitHub repository as `PYPI_API_TOKEN`. The GitHub Actions workflow will publish the package when a new release is tagged.
+Create an account at [PyPI](https://pypi.org/), generate an API token and add this to the GitHub repository as `PYPI_API_TOKEN`. The GitHub Actions workflow will publish the package when a new release is tagged.
 
 For the first release, manually publish a package using `Poetry`:
 
-* To test the package, run `poetry build` and `poetry publish -r test-pypi` to publish the package to TestPyPi. You may need to first run `poetry config repositories.test-pypi https://test.pypi.org/legacy/` to add the TestPyPI repository.
+* To test the package, run `poetry build` and `poetry publish -r test-pypi` to publish the package to [TestPyPi](https://test.pypi.org/) (you will need to set up a separate account). You may need to first run `poetry config repositories.test-pypi https://test.pypi.org/legacy/` to add the TestPyPI repository.
 
 * Check the package can be installed with `pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple [package-name]`. The `--extra-index-url` argument is needed to install dependencies from PyPI.
 
