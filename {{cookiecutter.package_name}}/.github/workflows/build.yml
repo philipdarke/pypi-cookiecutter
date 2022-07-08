@@ -32,6 +32,11 @@ jobs:
         run: |
           python3 -m poetry run make html --directory docs/ doctest
           python3 -m poetry run genbadge coverage -v -i coverage.xml -o docs/_build/html/assets/coverage-badge.svg
+      - name: Upload coverage.xml for deployment
+        uses: actions/upload-artifact@master
+        with:
+          name: coverage
+          path: coverage.xml
 
   cd:
     needs: ci
@@ -51,8 +56,10 @@ jobs:
         run: pip install poetry=={% raw %}${{ env.poetry_version }}{% endraw %}
       - name: Install package and dependencies
         run: python3 -m poetry install
-      - name: Get code coverage
-        run: python3 -m poetry run pytest -v --cov={{ cookiecutter.package_name }} --cov-report=xml
+      - name: Get coverage.xml
+        uses: actions/download-artifact@master
+        with:
+          name: coverage
       - name: Build documentation
         run: |
           python3 -m poetry run make html --directory docs/ doctest
