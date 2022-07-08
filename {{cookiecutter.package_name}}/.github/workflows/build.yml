@@ -30,7 +30,7 @@ jobs:
         run: python3 -m poetry run pytest -v --cov={{ cookiecutter.package_name }} --cov-report=xml
       - name: Build documentation
         run: |
-          python3 -m poetry run make doctest --directory docs/ doctest
+          python3 -m poetry run make doctest html --directory docs/
           python3 -m poetry run genbadge coverage -v -i coverage.xml -o docs/_build/html/assets/coverage-badge.svg
       - name: Upload coverage.xml for deployment
         uses: actions/upload-artifact@master
@@ -62,7 +62,7 @@ jobs:
           name: coverage
       - name: Build documentation
         run: |
-          python3 -m poetry run make doctest --directory docs/ doctest
+          python3 -m poetry run make doctest html --directory docs/
           python3 -m poetry run genbadge coverage -v -i coverage.xml -o docs/_build/html/assets/coverage-badge.svg
       - name: Update GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.7.3
