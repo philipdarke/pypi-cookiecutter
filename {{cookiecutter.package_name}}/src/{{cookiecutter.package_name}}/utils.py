@@ -1,4 +1,9 @@
-"""Add an introduction to each module in ``[module_name].py``.
+"""
+=====
+utils
+=====
+
+Add an introduction to each module in ``[module_name].py``.
 """
 
 
