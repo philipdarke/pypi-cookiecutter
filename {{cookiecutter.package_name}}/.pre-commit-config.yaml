@@ -18,4 +18,8 @@ repos:
     hooks:
       - id: isort
         name: isort (python)
-
+  - repo: https://github.com/philipdarke/trailing-newline
+    rev: v1.0.0
+    hooks:
+    - id: trailing-newline
+      args: [lock]

@@ -54,10 +54,13 @@ The following are run as pre-commit hooks:
 * [`black`](https://github.com/psf/black) to lint code
 * [`isort`](https://github.com/PyCQA/isort) to sort imports
 * [`flake8`](https://github.com/PyCQA/flake8) to check PEP 8 compliance
+* [`trailing-newline`](https://github.com/philipdarke/trailing-newline) to flag files that do not end with a blank newline*
 * [`mixed-line-ending`](https://github.com/pre-commit/pre-commit-hooks) to use consistent CRLF or LF line endings
 * [`name-tests-test`](https://github.com/pre-commit/pre-commit-hooks) to ensure the filenames of test scripts start "test"
 
 Run `pre-commit install` to set these up.
+
+\* Update `args` in `.pre-commit-config.yaml` to ignore specific file extensions. See the [documentation](https://github.com/philipdarke/trailing-newline).
 
 ## Continuous integration and deployment
 
